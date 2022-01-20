@@ -53,7 +53,6 @@ app.post('/create', (req, res) => {
                 }
             }
         )
-        conn.close()
     })
 });
 
@@ -63,7 +62,7 @@ app.get('/get', (req, res) => {
         console.log("Successful connection to database");
         res.send("DB connection successful");
         cnn.query(
-            "SELECT * FROM employees",
+            "SELECT 2 FROM employees",
             (err, result) => {
                 if(err){
                     res.send("Errors in the query")
@@ -75,7 +74,6 @@ app.get('/get', (req, res) => {
                 }
             }
         )
-        cnn.close()
     })
 });
 
